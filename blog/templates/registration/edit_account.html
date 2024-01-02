@@ -1,0 +1,13 @@
+{% extends 'parent/base.html' %}
+{% block title %}register{% endblock %}
+{% block content %}
+    <p>
+    لطفا اطلاعات خود را ویرایش کنید
+    </p>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ account_form.as_p }}
+    <input type="submit" >
+    </form>
+{% endblock %}

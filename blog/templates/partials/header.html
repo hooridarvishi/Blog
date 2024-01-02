@@ -1,0 +1,22 @@
+<form method="get" action="{%   url 'blog:search_post' %}">
+    {% csrf_token %}
+    <input type="text" name="query" required>
+    <input type="submit" value="جست جو" required>
+</form>
+{#<p>#}
+    <a href="{% url 'blog:profile' %}">
+profile
+    </a>
+{% if request.user.is_authenticated %}
+<div>
+<a href="#">{{ request.user.first_name | default:request.user.username }}</a>
+ </div>
+    {% else %}
+    <a href="{% url 'blog:login' %}">
+    ورود
+    </a>
+     <a href="{% url 'blog:register' %}">
+    ثبت نام
+    </a>
+{% endif %}
+{#</p>#}
